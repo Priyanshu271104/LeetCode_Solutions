@@ -1,0 +1,26 @@
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        int c = 0;
+        
+        char[] jewelsArray = jewels.toCharArray();
+        char[] stonesArray = stones.toCharArray();
+        
+        Arrays.sort(jewelsArray);
+        Arrays.sort(stonesArray);
+        
+        int i = 0, j = 0;
+        
+        while (i < jewelsArray.length && j < stonesArray.length) {
+            if (jewelsArray[i] == stonesArray[j]) {
+                c++;
+                j++;
+            } else if (jewelsArray[i] < stonesArray[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        
+        return c;
+    }
+}
