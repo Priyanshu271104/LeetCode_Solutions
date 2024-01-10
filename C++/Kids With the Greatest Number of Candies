@@ -1,0 +1,17 @@
+List<Boolean> ans = new ArrayList<>();
+        int max = candies.get(0);
+        for (int i = 1; i < candies.size(); i++) {
+            if (max < candies.get(i)) {
+                max = candies.get(i);
+            }
+        }
+        for (int i = 0; i < candies.size(); i++) {
+            if (candies.get(i) + extraCandies >= max) {
+                ans.add(true);
+            } else {
+                ans.add(false);
+            }
+        }
+        return ans;
+    }
+}
