@@ -1,0 +1,19 @@
+class Solution {
+    public int minimumSum(int num) {
+        int c=0,n=num;
+        while(n!=0){
+            c++;
+            n/=10;
+        }int i=0,last=0;
+        int ans[]=new int[c];
+        while(num!=0){
+            last=num%10;
+            ans[i]=last;
+            num/=10;
+            i++;
+        }
+        Arrays.sort(ans);
+        int a=10*ans[0]+10*ans[1]+ans[2]+ans[3];
+        return a;
+    }
+}
